@@ -7,12 +7,14 @@ Replaces the repetitive cycle of `zip → scp → ssh → cd → unzip → resta
 
 ## Quick Start
 ```bash
-npm install -g snapdeploy
+git clone https://github.com/MrHassan2027/SnapDeploy
+cd SnapDeploy
+npm install
+npm run build
 
 # In your project root:
-snapdeploy init           # generates snapdeploy.yml
-snapdeploy push           # zip → upload → deploy
-snapdeploy push --dry-run # preview what would happen
+node /path/to/snapdeploy/dist/cli.js init   # generates snapdeploy.yml
+node /path/to/snapdeploy/dist/cli.js push   # zip → upload → deploy
 ```
 
 ## Config (`snapdeploy.yml`)
@@ -34,7 +36,6 @@ commands:
 - SSH key auth (no password prompts)
 - `.gitignore`-style `ignore` list — never uploads `node_modules` by default
 - Progress bar during upload (shows MB/s)
-- `--rollback` flag: keeps last 3 deploys on server, can revert instantly
 - Works with any language/framework — just configure the deploy commands
 
 ## Tech Stack
